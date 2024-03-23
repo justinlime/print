@@ -1,0 +1,19 @@
+* Elegoo Neptune 4
+** Slicer
+For some reason, the only slicer that doesnt fuck up my prints is Cura slicer
+Download the preset profile from [[https://www.elegoo.com/pages/download][here]] (Im using the "New" option).
+
+So far, I haven't had to modify any settings in the slicer software itself. Will try to use this software 
+on linux, but for now its only on windows.
+
+Prusa slicer with some rando's Elegoo Neptune 4 profile fucks up just about every single print.
+
+** Usage
+*** Leveling
+Seems like you can choose the "auto-level" option in the settings, and it does it job well. Then
+manually tune the z-offset to the thickness of a sheet of printer paper. You want to paper to scape and feel
+tension, but not too much, should still be relatively easy to move the paper under the nozzle.
+*** Print speed
+This boi is fast as fuck but it shouldn't affect your print quality. Even with my wobbly ass table.
+*** Notes
+Wobbly table that its on right now shouldn't matter.
