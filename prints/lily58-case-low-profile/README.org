@@ -1,0 +1,5 @@
+* Lily58 case low profile
+This case does not tent, but its small and covers everything it needs to.
+Original print [[https://www.printables.com/model/93298-lily58-case][here]]
+
+[[./build.png]]

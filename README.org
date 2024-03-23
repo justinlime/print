@@ -1,4 +1,39 @@
-* Elegoo Neptune 4
+* Table of Contents :toc_3:
+- [[#notes-for-elegoo-neptune-4][Notes for Elegoo Neptune 4]]
+  - [[#general][General]]
+  - [[#leveling][Leveling]]
+  - [[#slicer][Slicer]]
+  - [[#notes][Notes]]
+    - [[#settings][Settings]]
+    - [[#leveling-1][Leveling]]
+  - [[#issues][Issues]]
+    - [[#top-or-bottom-of-print-has-noticable-lines][Top or bottom of print has noticable lines]]
+    - [[#stringy-prints-or-lines-are-curling-up-or-has-bubbles][Stringy prints, or lines are curling up, or has bubbles]]
+    - [[#prints-are-scrapinglook-like-crap][Prints are scraping/look like crap]]
+    - [[#prints-are-coming-up-during-the-first-layer][Prints are coming up during the first layer]]
+
+* Notes for Elegoo Neptune 4
+** General
+If nothing in here helps, check out [[https://support.3dverkstan.se/article/23-a-visual-ultimaker-troubleshooting-guide][this]] guide
+
+Add the following to printer.cfg
+[[./assets/bedmesg.png]]
+
+** Leveling
+Start with a clean bed, wash wish dish soap and water very thoroughly. 
+
+To level, enter the "Level" menu on the printer. First calibrate the z-offset. Place a piece of paper between
+the nozzle and the bed, there should be a slight amount of friction, but not too much. Once you have this confirmed,
+enter the "Auxilary" leveling, and do the same for each of the four corner points. Go over each point multiple times,
+since changing one point will affect another. After you save it should perform automatic leveling immedietly after.
+
+Lastly, calibrate the z-offset one more time, and hit save.
+
+The automaic calibration that gets run after the auxillary leveling creates a bed mesh to compensate for inconsistencies.
+If you dont add the line from above in either printer.cfg or your gcode when your slicing, then the mesh wont even be used.
+
+Check the WebGUI, if the bed mess is way too out of wack, try another leveling cycle.
+
 ** Slicer
 For some reason, the only slicer that doesnt fuck up my prints is Cura slicer
 Download the preset profile from [[https://www.elegoo.com/pages/download][here]] (Im using the "New" option).
@@ -8,12 +43,45 @@ on linux, but for now its only on windows.
 
 Prusa slicer with some rando's Elegoo Neptune 4 profile fucks up just about every single print.
 
-** Usage
+** Notes
+*** Settings
+If any settings are not visible, you can enable them in the settings visibility menu
+
 *** Leveling
 Seems like you can choose the "auto-level" option in the settings, and it does it job well. Then
 manually tune the z-offset to the thickness of a sheet of printer paper. You want to paper to scape and feel
 tension, but not too much, should still be relatively easy to move the paper under the nozzle.
-*** Print speed
-This boi is fast as fuck but it shouldn't affect your print quality. Even with my wobbly ass table.
-*** Notes
-Wobbly table that its on right now shouldn't matter.
+
+MY WOBBLY ASS TABLE <SHOULDN'T> MAKE A DIFFENCE WITH THE LEVELING
+
+** Issues
+*** Top or bottom of print has noticable lines
+Try enabling monotonic for top/bottom. Lines will still be there but less noticeable
+Layers more than 1 probably wont make a difference
+[[./assets/monotonic.png]]
+
+Also, enabling ironing and monotonic ironing order
+This will make the top layer look very smooth
+[[./assets/ironing.png]]
+
+*** Stringy prints, or lines are curling up, or has bubbles
+Disable zhop, this might cause other issues (see directly below).
+Simply lowering it might help.
+
+*** Prints are scraping/look like crap
+Some of my prints do just fine even with some agressive scrapage, but if its causing issues then
+You might be over or under extruding if your prints look like shit, or if they are scraping constantly
+[[./assets/extruder.jpg]]
+
+Try messing with the flow settings in cura, specifically decreasing the flow on the inner and outer walls
+[[./assets/flow.png]]
+
+
+Also, make sure "Z Hop only over printed parts" is enabled, and try increasing the zhop height.
+
+[[./assets/zhop.png]]
+
+Or try lowering the speed.
+
+*** Prints are coming up during the first layer 
+Use glue you dumb mf

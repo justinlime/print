@@ -1,7 +1,6 @@
 * Lily58 Tented case
-You need M5 screws and nuts for the tenting. M2 standoff or really long M2's (14mm+) will be needed.
+You need M5 (probably atleast 20mm) screws and nuts for the tenting. M2 standoff or really long M2's (14mm+) will be needed.
 
 The original post on thingiverse is [[https://www.thingiverse.com/thing:4601644/makes][here]] 
-[[./built.webp]]
-
-[[./case.webp]]
+[[./case.png]]
+[[./built.png]]
